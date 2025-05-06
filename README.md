@@ -1,17 +1,22 @@
-## **@mvkproject/nexus**
+
+# **@mvkproject/nexus**
 
 [![npm version](https://img.shields.io/npm/v/@mvkproject/nexus.svg)](https://www.npmjs.com/package/@mvkproject/nexus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Official Node.js wrapper for the MVKProject Nexus API. This package provides easy access to AI models, image generation, and other services offered by the Nexus API.
+> Official Node.js wrapper for the MVKProject Nexus API. Documentation available at [https://nexus.mvkproject.xyz/](https://nexus.mvkproject.xyz/)
 
-## Installation
+This package provides easy access to AI models, image generation, and other services offered by the Nexus API at [https://nexus.mvkproject.xyz/](https://nexus.mvkproject.xyz/).
+
+---
+
+## 📦 Installation
 
 ```bash
 npm install @mvkproject/nexus
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 To use this package, you'll need an API key from the MVKProject Discord server. Join the server at [https://discord.gg/9d8MP9gRbz](https://discord.gg/9d8MP9gRbz) to obtain your key.
 
@@ -24,7 +29,7 @@ const nexus = new NexusAPI('your-api-key-here');
 // Now you can use the API methods
 ```
 
-## Features
+## ✨ Features
 
 This package provides access to the following Nexus API endpoints:
 
@@ -33,9 +38,11 @@ This package provides access to the following Nexus API endpoints:
 - **Image Analysis**: Vision AI for image content analysis
 - **Discord Cards**: Welcome images, rank cards, level-up cards
 
-## API Reference
+---
 
-### AI Models
+## 📚 API Reference
+
+### 🤖 AI Models
 
 #### ChatGPT
 
@@ -129,7 +136,7 @@ Parameters:
 - `longitud` (string, optional): Desired response length
 - `context` (string, optional): Context or specific instructions for AI
 
-### Image Services
+### 🖼️ Image Services
 
 #### AI Image Analysis (Vision)
 
@@ -183,7 +190,7 @@ Available models:
 - `photo3dwillit`, `lucid-sonic-dreams`, `codeformer`
 - `bark`, `3d-photo-inpainting`
 
-### Discord Cards
+### 🎭 Discord Cards
 
 #### Welcome Image Generation
 
@@ -312,7 +319,7 @@ Parameters:
 - `avatarBorder` (string, optional): Avatar border color (hex)
 - `opacity` (number, optional): Overlay opacity (0-1)
 
-## Error Handling
+## ⚠️ Error Handling
 
 The package throws errors with descriptive messages when API requests fail:
 
@@ -328,16 +335,17 @@ try {
 }
 ```
 
-## License
+## 📄 License
 
 MIT
 
-## Author
+## 👨‍💻 Author
 
 DarknessDev
 
-## Links
+## 🔗 Links
 
 - [Discord Server](https://discord.gg/9d8MP9gRbz) - Join to get your API key
 - [GitHub Repository](https://github.com/mvkproject/nexus-api)
 - [NPM Package](https://www.npmjs.com/package/@mvkproject/nexus)
+- [Documentation](https://nexus.mvkproject.xyz/)

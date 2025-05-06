@@ -19,6 +19,8 @@ npm install @mvkproject/nexus
 
 To use this package, you'll need an API key from the MVKProject Discord server. Join the server at [https://discord.gg/9d8MP9gRbz](https://discord.gg/9d8MP9gRbz) to obtain your key.
 
+### CommonJS (Traditional Node.js)
+
 ```javascript
 const NexusAPI = require('@mvkproject/nexus');
 
@@ -26,6 +28,32 @@ const NexusAPI = require('@mvkproject/nexus');
 const nexus = new NexusAPI('your-api-key-here');
 
 // Now you can use the API methods
+```
+
+### ES Modules (ESM)
+
+```javascript
+import NexusAPI from '@mvkproject/nexus';
+
+// Initialize with your API key
+const nexus = new NexusAPI('your-api-key-here');
+
+// Now you can use the API methods
+```
+
+### TypeScript
+
+```typescript
+import NexusAPI from '@mvkproject/nexus';
+
+// Initialize with your API key
+const nexus = new NexusAPI('your-api-key-here');
+
+// TypeScript provides full type definitions
+const response = await nexus.chatGPT({
+  text: "Hello world",
+  userID: "user123"
+}); // Type-checked and with IntelliSense support
 ```
 
 ## ✨ Features

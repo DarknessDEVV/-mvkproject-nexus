@@ -1,6 +1,6 @@
 {
   "name": "@mvkproject/nexus",
-  "version": "1.0.15",
+  "version": "1.0.20",
   "description": "Official Node.js wrapper for the MVKProject Nexus API",
   "main": "index.js",
   "module": "index.mjs",

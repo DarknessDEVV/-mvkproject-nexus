@@ -1,15 +1,58 @@
 {
-  "name": "nodejs",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@mvkproject/nexus",
+  "version": "1.0.12",
+  "description": "Official Node.js wrapper for the MVKProject Nexus API",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "mvkproject",
+    "nexus",
+    "api",
+    "wrapper",
+    "discord",
+    "ai",
+    "image-generation",
+    "chatgpt",
+    "gemini",
+    "ai",
+    "chatbot",
+    "chatgpt",
+    "gpt",
+    "text2image",
+    "texttoimage",
+    "text2img",
+    "texttoimg",
+    "image",
+    "image-generator",
+    "diffusion",
+    "ai-images",
+    "ai-images-generator",
+    "chatgpt4",
+    "chatgpt-4",
+    "openai",
+    "open-ai",
+    "discord-ai",
+    "discordai",
+    "gemini",
+    "gemini-api",
+    "gemini-pro",
+    "deepseek",
+    "llama",
+    "deepseek-r1"
+  ],
+  "author": "DarknessDev",
+  "license": "MIT",
   "dependencies": {
-    "@types/node": "^22.13.11"
-  }
+    "axios": "^1.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DarknessDEVV/-mvkproject-nexus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DarknessDEVV/-mvkproject-nexus/issues"
+  },
+  "homepage": "https://github.com/DarknessDEVV/-mvkproject-nexus#readme"
 }

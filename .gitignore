@@ -1,3 +1,8 @@
+# .gitignore completo y actualizado
+
+.replit
+.cache/
+
 # Logs
 logs
 *.log
@@ -131,3 +136,4 @@ dist
 
 # Replit debugger
 .breakpoints
+.upm

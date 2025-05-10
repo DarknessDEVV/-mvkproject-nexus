@@ -1,11 +1,12 @@
-## **@mvkproject/nexus**
+# **@mvkproject/nexus**
 
 [![npm version](https://img.shields.io/npm/v/@mvkproject/nexus.svg)](https://www.npmjs.com/package/@mvkproject/nexus)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-> Official Node.js wrapper for the MVKProject Nexus API. Documentation available at [https://nexus.adonis-except.xyz/](https://nexus.adonis-except.xyz/)
+> ⚡️ **Official Node.js wrapper for the [MVKProject Nexus API](https://nexus.adonis-except.xyz/)**
 
-This package provides easy access to AI models, image generation, and other services offered by the Nexus API at [https://nexus.adonis-except.xyz/](https://nexus.adonis-except.xyz/).
+Seamlessly access powerful AI models, image generation, advanced vision, and Discord card utilities—directly from your Node.js projects.  
+Full API docs: [https://nexus.adonis-except.xyz/](https://nexus.adonis-except.xyz/)
 
 ---
 
@@ -15,55 +16,51 @@ This package provides easy access to AI models, image generation, and other serv
 npm install @mvkproject/nexus
 ```
 
+---
+
 ## 🚀 Getting Started
 
-To use this package, you'll need an API key from the MVKProject Discord server. Join the server at [https://discord.gg/9d8MP9gRbz](https://discord.gg/9d8MP9gRbz) to obtain your key.
+To use this package, you’ll need an API key.  
+Join the [Discord Server](https://discord.gg/9d8MP9gRbz) to get your key.
 
-### CommonJS (Traditional Node.js)
+### Usage Examples
+
+#### CommonJS
 
 ```javascript
 const NexusAPI = require('@mvkproject/nexus');
-
-// Initialize with your API key
 const nexus = new NexusAPI('your-api-key-here');
-
-// Now you can use the API methods
+// Use API methods...
 ```
 
-### ES Modules (ESM)
+#### ES Modules
 
 ```javascript
 import NexusAPI from '@mvkproject/nexus';
-
-// Initialize with your API key
 const nexus = new NexusAPI('your-api-key-here');
-
-// Now you can use the API methods
+// Use API methods...
 ```
 
-### TypeScript
+#### TypeScript
 
 ```typescript
 import NexusAPI from '@mvkproject/nexus';
-
-// Initialize with your API key
 const nexus = new NexusAPI('your-api-key-here');
 
-// TypeScript provides full type definitions
 const response = await nexus.chatGPT({
   text: "Hello world",
   userID: "user123"
-}); // Type-checked and with IntelliSense support
+}); // Typed & IntelliSense supported
 ```
+
+---
 
 ## ✨ Features
 
-This package provides access to the following Nexus API endpoints:
-
 - **AI Models**: ChatGPT, Gemini, DeepSeek, Meta AI
-- **Image Generation**: AI-powered image creation
-- **Image Analysis**: Vision AI for image content analysis
-- **Discord Cards**: Welcome images, rank cards, level-up cards
+- **Image Generation**: Ultra-flexible AI image creation
+- **Vision AI**: Powerful image content/scene analysis
+- **Discord Utilities**: Welcome, rank, level-up cards
 
 ---
 
@@ -71,101 +68,73 @@ This package provides access to the following Nexus API endpoints:
 
 ### 🤖 AI Models
 
-#### ChatGPT
+#### `chatGPT()`
 
 ```javascript
 const response = await nexus.chatGPT({
   text: "What is artificial intelligence?",
   userID: "user123",
-  // Optional parameters
   personality: "professor",
   length: "medium",
   systemInstruction: "You are a helpful assistant",
   model: "gpt-4o-mini" // Default: gpt-4o-mini
 });
-
 console.log(response.result);
 ```
+**Parameters:**
+- `text` (string, required): Prompt input
+- `userID` (string, required): User identifier
+- `personality`, `length`, `systemInstruction`, `model` (optional)
 
-Parameters:
-- `text` (string, required): User input text
-- `userID` (string, required): Unique user identifier
-- `personality` (string, optional): AI personality (e.g., "happy", "professor")
-- `length` (string, optional): Desired response length
-- `systemInstruction` (string, optional): Specific instructions for AI behavior
-- `model` (string, optional): Specific model to use (e.g., "gpt-4o-mini", "o3-mini")
-
-#### Gemini
+#### `gemini()`
 
 ```javascript
 const response = await nexus.gemini({
   text: "Describe this image",
   userID: "user123",
   image: "https://example.com/image.jpg",
-  // Optional parameters
   personality: "descriptive",
   model: "gemini-1.5-flash"
 });
-
 console.log(response.result);
 ```
+**Parameters:**
+- `text` (string, required)
+- `userID` (string, required)
+- `image` (string|array, optional)
+- `personality`, `length`, `systemInstruction`, `model` (optional)
 
-Parameters:
-- `text` (string, required): User input text
-- `userID` (string, required): Unique user identifier
-- `image` (string|array, optional): URL(s) of image(s) or video(s) for analysis
-- `personality` (string, optional): AI personality
-- `length` (string, optional): Desired response length
-- `systemInstruction` (string, optional): Specific instructions for AI behavior
-- `model` (string, optional): Specific Gemini model (e.g., "gemini-1.5-flash", "gemini-pro")
-
-#### DeepSeek
+#### `deepSeek()`
 
 ```javascript
 const response = await nexus.deepSeek({
   text: "Explain quantum computing",
   userID: "user123",
-  // Optional parameters
   personality: "technical",
   length: "long",
   context: "You are a quantum physics expert"
 });
-
 console.log(response.result);
 ```
 
-Parameters:
-- `text` (string, required): User input text
-- `userID` (string, required): Unique user identifier
-- `personality` (string, optional): AI personality
-- `length` (string, optional): Desired response length
-- `context` (string, optional): Context or specific instructions for AI
-
-#### Meta AI
+#### `metaAI()`
 
 ```javascript
 const response = await nexus.metaAI({
   text: "Write a short story about space exploration",
   userID: "user123",
-  // Optional parameters
   personality: "creative",
   length: "medium",
   context: "You are a science fiction author"
 });
-
 console.log(response.result);
 ```
 
-Parameters:
-- `text` (string, required): User input text
-- `userID` (string, required): Unique user identifier
-- `personality` (string, optional): AI personality
-- `length` (string, optional): Desired response length
-- `context` (string, optional): Context or specific instructions for AI
+---
 
 ### 🖼️ Image Services
 
-#### AI Image Analysis (Vision)
+#### **Image Analysis (Vision AI)**
 
 ```javascript
 const response = await nexus.analyzeImage({
@@ -173,53 +142,38 @@ const response = await nexus.analyzeImage({
   prompt: "What can you see in this image?",
   userID: "user123"
 });
-
 console.log(response.result);
 ```
+**Parameters:**  
+- `url` (string, required): Image URL  
+- `prompt` (string, required): Analysis prompt  
+- `userID` (string, required)
 
-Parameters:
-- `url` (string, required): URL of the image to analyze
-- `prompt` (string, required): Text to guide the image analysis
-- `userID` (string, required): Unique user identifier
-
-#### AI Image Generation
+#### **AI Image Generation**
 
 ```javascript
 const response = await nexus.generateImage({
   prompt: "A futuristic city with flying cars and neon lights",
-  // Optional parameters
   negative_prompt: "blurry, low quality",
   model: "flux-realism",
   width: 1024,
   height: 1024,
   enhance: true
 });
-
-console.log(response.result); // Returns path to generated image
+console.log(response.result); // Path to image
 ```
+**Parameters:**  
+- `prompt` (string, required)
+- `negative_prompt`, `model`, `width`, `height`, `seed`, `nologo`, `private`, `enhance`, `safe` (optional)
 
-Parameters:
-- `prompt` (string, required): Descriptive text for image generation
-- `negative_prompt` (string, optional): Elements to avoid in the image
-- `model` (string, optional): AI model to use (default: "flux")
-- `width` (number, optional): Image width in pixels (default: 1024)
-- `height` (number, optional): Image height in pixels (default: 1024)
-- `seed` (number, optional): Seed for reproducible results
-- `nologo` (boolean, optional): Attempts to generate without logos/watermarks
-- `private` (boolean, optional): Marks the image as private
-- `enhance` (boolean, optional): Applies quality enhancements
-- `safe` (boolean, optional): Applies safety filters
+**Available models:**  
+`flux`, `flux-realism`, `flux-anime`, `flux-3d`, `flux-pro`, `any-dark`, `turbo`, `pimp-diffusion`, `magister-diffusion`, `dolly-mini`, `stable-diffusion`, `stable-diffusion-animation`, `photo3dwillit`, `lucid-sonic-dreams`, `codeformer`, `bark`, `3d-photo-inpainting`
 
-Available models:
-- `flux`, `flux-realism`, `flux-anime`, `flux-3d`, `flux-pro`
-- `any-dark`, `turbo`, `pimp-diffusion`, `magister-diffusion`
-- `dolly-mini`, `stable-diffusion`, `stable-diffusion-animation`
-- `photo3dwillit`, `lucid-sonic-dreams`, `codeformer`
-- `bark`, `3d-photo-inpainting`
+---
 
 ### 🎭 Discord Cards
 
-#### Welcome Image Generation
+#### **Welcome Image**
 
 ```javascript
 const response = await nexus.generateWelcomeImage({
@@ -227,28 +181,17 @@ const response = await nexus.generateWelcomeImage({
   text1: "Welcome to the Server!",
   text2: "We're glad you're here",
   useravatar: "https://example.com/avatar.png",
-  // Optional parameters
   textColor: "#ffffff",
   bordeColor: "#ff5500",
   type: 2
 });
-
-console.log(response.result); // Returns path to generated image
+console.log(response.result);
 ```
 
-Parameters:
-- `background` (string, required): URL of the background image
-- `text1` (string, required): First text to display
-- `text2` (string, required): Second text to display
-- `useravatar` (string, required): URL of the user's avatar
-- `textColor` (string, optional): Text color in hexadecimal (default: white)
-- `bordeColor` (string, optional): Border color for avatar and image outline (default: white)
-- `type` (number, optional): Welcome image style (1, 2, or 3)
-
-#### Rank/Level Card Generation
+#### **Rank/Level Card**
 
 ```javascript
-// Type 1 (Default)
+// Type 1 (default)
 const response = await nexus.generateRankCard({
   background: "https://example.com/background.jpg",
   username: "CoolUser",
@@ -278,89 +221,49 @@ const response2 = await nexus.generateRankCard({
   colorBar: "#00ff00",
   type: 4
 });
-
-console.log(response.result); // Returns path to generated image
+console.log(response.result);
 ```
 
-Parameters:
-- `background` (string, required): URL or hex color for background (varies by type)
-- `username` (string, required): User's name
-- `level` (number, required): Current level
-- `xp` (number, required): Current experience points
-- `requiredXp` (number, required): Experience needed for next level
-- `avatar` (string, required): URL of user's avatar
-- `status` (string, optional): User status (e.g., "online", "idle", default: "online")
-- `rank` (number, optional): Ranking position (required for some types)
-- `color` (string, optional): Username text color (hex)
-- `border` (string|number, optional): Border color (hex) or width (px)
-- `colorBar` (string, optional): Progress bar color (hex)
-- `textcolorBar` (string, optional): Progress bar text color (hex)
-- `tag` (string, optional): User tag/discriminator
-- `type` (number, optional): Card style (1, 2, 3, or 4, default: 1)
-
-#### Rank Card Types
-
-Here are examples of the four different rank card styles available:
-
-**Type 1** (Default):  
-![Rank Card Type 1](https://nexus.adonis-except.xyz/example/rank-card_type-1.png)
-
-**Type 2**:  
-![Rank Card Type 2](https://nexus.adonis-except.xyz/example/rank-card_type-2.png)
-
-**Type 3**:  
-![Rank Card Type 3](https://nexus.adonis-except.xyz/example/rank-card_type-3.png)
-
-**Type 4**:  
-![Rank Card Type 4](https://nexus.adonis-except.xyz/example/rank-card_type-4.png)
-
-Behavior by type:
-- **Type 1:** Uses most parameters, `background` (URL/hex), `border` (color hex)
-- **Type 2:** Doesn't use `background`, `color` (text), `border` (color), `textcolorBar`, `tag`
-- **Type 3:** Requires `rank`, uses `background` (URL/hex), `border` (avatar border color), `colorBar` (bubble color), `textcolorBar` (XP text color), `color` (username color)
-- **Type 4:** Requires `rank`, uses `background` (hex color only), `tag`, `color` (general text color), `border` (avatar border width), `colorBar` (progress bar color)
-
-#### Level Up Card Generation
+#### **Level Up Card**
 
 ```javascript
 const response = await nexus.generateLevelUpCard({
   avatar: "https://example.com/avatar.png",
-  backround: "#1a1a1a", // Note: API uses "backround" (not "background")
+  backround: "#1a1a1a", // Note typo: "backround"
   username: "CoolUser",
   levels: [10, 11],
-  // Optional parameters
   border: "#ffffff",
   avatarBorder: "#ff5500",
   opacity: 0.7
 });
-
-console.log(response.result); // Returns path to generated image
+console.log(response.result);
 ```
 
-Parameters:
-- `avatar` (string, required): URL of user's avatar
-- `backround` (string, required): Background color (hex) or image URL
-- `username` (string, required): User's name
-- `levels` (array|object, required): Previous and new level info (e.g., `[10, 11]` or `{"old": 10, "new": 11}`)
-- `border` (string, optional): Card border color (hex)
-- `avatarBorder` (string, optional): Avatar border color (hex)
-- `opacity` (number, optional): Overlay opacity (0-1)
+#### **Rank Card Types**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| 1 | Default: all features (background URL/hex, border color) | ![Type 1](https://nexus.adonis-except.xyz/example/rank-card_type-1.png) |
+| 2 | Simpler, ignores some style params | ![Type 2](https://nexus.adonis-except.xyz/example/rank-card_type-2.png) |
+| 3 | Needs `rank`, custom colors | ![Type 3](https://nexus.adonis-except.xyz/example/rank-card_type-3.png) |
+| 4 | Hex background, tag, border width | ![Type 4](https://nexus.adonis-except.xyz/example/rank-card_type-4.png) |
+
+---
 
 ## ⚠️ Error Handling
 
-The package throws errors with descriptive messages when API requests fail:
+All methods throw clear error messages if something fails:
 
 ```javascript
 try {
-  const response = await nexus.chatGPT({
-    text: "Hello",
-    userID: "user123"
-  });
+  const response = await nexus.chatGPT({ text: "Hello", userID: "user123" });
   console.log(response);
 } catch (error) {
   console.error("Error:", error.message);
 }
 ```
+
+---
 
 ## 📄 License
 
@@ -370,9 +273,11 @@ MIT
 
 DarknessDev
 
+---
+
 ## 🔗 Links
 
-- [Discord Server](https://discord.gg/9d8MP9gRbz) - Join to get your API key
-- [GitHub Repository](https://github.com/DarknessDEVV/-mvkproject-nexus)
+- [Discord Server for API Key](https://discord.gg/9d8MP9gRbz)
+- [GitHub Repo](https://github.com/DarknessDEVV/-mvkproject-nexus)
 - [NPM Package](https://www.npmjs.com/package/@mvkproject/nexus)
-- [Documentation](https://nexus.adonis-except.xyz/)
+- [Full API Documentation](https://nexus.adonis-except.xyz/)
